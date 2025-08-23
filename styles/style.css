@@ -7,45 +7,11 @@
   padding: 92px 50px 96px;
 }
 
-.cover {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 1100px;
-  min-height: 757px;
-  padding: 165px 50px 50px;
-  background-image: url(../images/cover.jpg);
-  background-position: center;
-  background-size: cover;
-  
-}
-
-.lots {
-  padding: 180px 24px 118px;
-}
-
-.about {
-  display: grid;
-  grid-template-columns: 334px 1fr;
-  grid-template-areas: "about__logo about__column";
-  padding: 0px 24px 180px;
-}
-
-.footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: "address footer__menu footer__social-list";
-  justify-content: space-between;
-  padding: 0px 50px 82px;
-}
-
 .header__menu {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   width: 391px;
-  height: 22px;
 }
 
 .header__links-list {
@@ -59,7 +25,7 @@
   list-style: circle;
 }
 
-.header__link_active {
+.header__links-list-item_no-bullit {
   list-style: none;
 }
 
@@ -68,15 +34,16 @@
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
 }
+
 /*если ссылка активна, то ее не подчеркиваем*/
-.header__link_active .header__link {
+.header__links-list-item .header__link_active {
   text-decoration: none;
 }
 
 .header__logo {
   display: block;
   width: 148px;
-  height: 105px; 
+  height: 105px;
 }
 
 .header__logo-image {
@@ -84,15 +51,15 @@
 }
 
 .address {
-  all: initial; /*сброс всех свойств*/
   display: flex;
   flex-direction: column;
   justify-self: end;
   align-items: flex-start;
-  font-family: "Raleway", sans-serif;
+  font-family: Raleway, Arial, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 135%;
+  all: initial; /*сброс всех свойств*/
 }
 
 .header__address {
@@ -104,9 +71,23 @@
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
 }
+
+.cover {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1100px;
+  min-height: 757px;
+  padding: 165px 50px 50px;
+  background-image: url(../images/cover.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
 .overlay {
   position: absolute;
-  inset: 0; 
+  inset: 0;
   z-index: 0;
   opacity: 0.6;
   background: #000;
@@ -171,7 +152,11 @@
   font-size: 22px;
   text-align: center;
   text-transform: uppercase;
-  background: transparent; 
+  background: transparent;
+}
+
+.lots {
+  padding: 180px 24px 118px;
 }
 
 .lots__heading {
@@ -184,7 +169,9 @@
 .lots__card-list {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 25px;
   padding: 27px 0px 30px;
   list-style: none;
 }
@@ -192,18 +179,6 @@
 .lots__card-list-item {
   width: 334px;
   min-height: 596px;
-}
-.lots__look-more-link {
-  display: inline-block;
-  margin-left: 40px;
-  font-weight: 400;
-  font-size: 20px;
-}
-
-.lots__look-more-link a {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
 }
 
 .card-link {
@@ -255,6 +230,23 @@
   text-decoration: none;
 }
 
+.lots__look-more-link {
+  display: inline-block;
+  margin-left: 40px;
+  font-weight: 400;
+  font-size: 20px;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 334px 1fr;
+  grid-template-areas: "about__logo about__column";
+  padding: 0px 24px 180px;
+}
+
 .about__logo {
   display: flex;
   justify-content: center;
@@ -293,12 +285,19 @@
   line-height: 120%;
 }
 
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "address footer__menu footer__social-list";
+  justify-content: space-between;
+  padding: 0px 50px 82px;
+}
+
 .footer__menu {
   display: flex;
   justify-content: center;
   align-items: start;
   width: 391px;
-  height: 22px;
 }
 
 .footer__menu-list {
@@ -315,14 +314,15 @@
   list-style: none;
 }
 
+/*если ссылка активна, то ее не подчеркиваем*/
+.footer__menu-list-item .footer__menu-link_active {
+  text-decoration: none;
+}
+
 .footer__menu-link {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
-}
-/*если ссылка активна, то ее не подчеркиваем*/
-.footer__menu-link_active .footer__menu-link {
-  text-decoration: none;
 }
 
 .footer__social-list {
