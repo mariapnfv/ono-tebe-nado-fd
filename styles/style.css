@@ -51,6 +51,7 @@
 }
 
 .address {
+  all: initial; /*сброс всех свойств*/
   display: flex;
   flex-direction: column;
   justify-self: end;
@@ -59,7 +60,6 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 135%;
-  all: initial; /*сброс всех свойств*/
 }
 
 .header__address {
